@@ -36,3 +36,7 @@ AV Operations Command Center is the owner's separate existing Base44 app. Connec
 New project source improvements are held in separate local copies under ../projects. The portfolio describes fresh verification separately from historical public receipts. The OptiPlex companion's seven synthetic checks did not read real hardware or deploy services. Private Vector source and local unit-suite details remain outside all portfolio static assets and public case claims. A successful private local unit run is not evidence of production behavior, adoption or the current public product scope.
 
 See [the ten-case release review](docs/release/CASE_STUDY_REVIEW.md) for evidence destinations, per-case limits and the exact Integrity baseline discrepancy. The release lead will reconcile current case/journal wording and record final build/export checks separately.
+
+## Final professional candidate clarification
+
+The owner authorized polished public résumé wording with temporary release notices removed; publication remains a separate gate. Official month ranges, the school-term break and detailed earlier-role provenance above remain unchanged. The shared-source sanitized PDF/text is rebuilt and checked in FINAL_CANDIDATE_REPORT.md. The sole LinkedIn identity is https://www.linkedin.com/in/kaden-diaz-3236b4411/; normal Chrome confirmed the destination. The retired session was signed out without edits/posts/account deletion.

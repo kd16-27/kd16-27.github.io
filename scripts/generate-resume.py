@@ -5,16 +5,16 @@ import json
 import hashlib
 from pathlib import Path
 from xml.sax.saxutils import escape
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, KeepTogether
+from reportlab.platypus import SimpleDocTemplate, Paragraph, PageBreak, KeepTogether
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.colors import HexColor
-from reportlab.lib.enums import TA_LEFT
 from reportlab import rl_config
 
 rl_config.invariant = 1
 root = Path(__file__).resolve().parents[1]
 source = root / "content/resume.json"
 r = json.loads(source.read_text())
+assert r["linkedin"] == "https://www.linkedin.com/in/kaden-diaz-3236b4411/", "Unapproved LinkedIn identity"
 target = root / "public/kaden-diaz-resume.pdf"
 styles = getSampleStyleSheet()
 styles.add(ParagraphStyle(name="Name", fontName="Helvetica-Bold", fontSize=24, leading=28, textColor=HexColor("#12364a"), spaceAfter=6))
@@ -30,11 +30,15 @@ def footer(canvas, doc):
     canvas.saveState()
     canvas.setFont("Helvetica",7.3)
     canvas.setFillColor(HexColor("#465765"))
-    canvas.drawString(44,29,"Kaden Diaz | Public portfolio review copy | October 23, 2026")
+    canvas.drawString(44,29,"Kaden Diaz | Engineering resume | October 2026")
     canvas.drawRightString(568,29,str(doc.page))
     canvas.restoreState()
-story += [para(r["name"],"Name"), para(r["title"]), para(r["contact"],"SmallCopy"), para(r["linkedin"],"SmallCopy"), para(r["notice"],"SmallCopy")]
+story += [para(r["name"],"Name"), para(r["title"]), para(r["contact"],"SmallCopy"), para(r["linkedin"],"SmallCopy")]
 section("Profile");story.append(para(r["profile"]))
+section("Selected engineering accomplishment")
+for h in r["highlights"]:
+    story.append(Paragraph("<b>"+escape(h["title"])+"</b> - "+escape(h["text"]),styles["Copy"]))
+    story.append(para(h["evidence"],"SmallCopy"))
 section("Professional experience")
 for e in r["experience"]:
     block=[Paragraph("<b>"+escape(e["role"])+"</b><br/>"+escape(e["company"])+"<br/>"+escape(e["period"]),styles["Copy"])]
@@ -45,13 +49,13 @@ story.append(PageBreak())
 story += [para("Technical work & learning","Name"),para(r["title"],"SmallCopy")]
 section("Selected projects")
 for p in r["projects"]:
-    story.append(Paragraph("<b>"+escape(p["name"])+"</b> - "+escape(p["text"]),styles["Copy"]))
+    story.append(Paragraph("<b>"+escape(p["name"])+"</b> - "+escape(p["status"])+"<br/>"+escape(p["text"]),styles["Copy"]))
 section("Selected credentials & training")
 story.append(para(r["credentialsNote"],"SmallCopy"))
 for c in r["credentials"]:story.append(para("- "+c,"SmallCopy"))
 section("Education")
 for e in r["education"]:story.append(para(e["school"]+" | "+e["qualification"]))
-SimpleDocTemplate(str(target),pagesize=(612,792),rightMargin=44,leftMargin=44,topMargin=38,bottomMargin=47,title="Kaden Diaz - Public Portfolio Resume Review",author="Kaden Diaz",subject="Public-safe professional resume review copy").build(story,onFirstPage=footer,onLaterPages=footer)
+SimpleDocTemplate(str(target),pagesize=(612,792),rightMargin=44,leftMargin=44,topMargin=38,bottomMargin=47,title="Kaden Diaz - Engineering Resume",author="Kaden Diaz",subject="AV systems engineering, technical projects and professional training").build(story,onFirstPage=footer,onLaterPages=footer)
 receipt={"source":"content/resume.json","sourceSha256":hashlib.sha256(source.read_bytes()).hexdigest(),"pdf":"public/kaden-diaz-resume.pdf","pdfSha256":hashlib.sha256(target.read_bytes()).hexdigest()}
 (root/"content/resume-receipt.json").write_text(json.dumps(receipt,indent=2)+"\n")
-print("Generated public-safe review PDF and source receipt.")
+print("Generated sanitized professional PDF and source receipt.")

@@ -1,6 +1,6 @@
 {
   "source": "content/resume.json",
-  "sourceSha256": "09f283ecd39ee8667d4c9d770719d9f015f108ebc304ed6c7622317dce84a343",
+  "sourceSha256": "15d45fa5235aa5502aa2dd2de972207b62060e723ca250eb97efbfc2106bb672",
   "pdf": "public/kaden-diaz-resume.pdf",
-  "pdfSha256": "cd42870fa77d26bb618913881204b32247044f4c7ba265afa9bee75338c72ab5"
+  "pdfSha256": "32ed7a02d818466f91f9fd893414cff16eaa34b5d3cc8b6088c02e258207d025"
 }

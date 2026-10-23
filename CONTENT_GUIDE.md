@@ -24,7 +24,7 @@ The two seed journal entries are drafts. Their dates are preparation dates. Add 
 
 ## Résumé
 
-The public-safe review page, text and PDF use content/resume.json. The original supplied PDFs remain outside the repository. Regenerate the checked PDF/receipt with scripts/generate-resume.py and inspect both pages. The build creates text from the same JSON; unit/export checks reject a stale receipt. Do not remove review labels or publish without explicit owner approval.
+The sanitized professional page, text and PDF use content/resume.json. The original supplied PDFs remain outside the repository. Regenerate the checked PDF/receipt with scripts/generate-resume.py and inspect both pages. The build creates text from the same JSON; unit/export checks reject a stale receipt. The owner authorized removal of temporary release notices for the final professional candidate. Publication still requires explicit approval.
 
 ## Release
 
@@ -35,3 +35,5 @@ Run `npm run validate`, `npm run test:e2e`, and the production dependency audit.
 Use Geospatial and Cloud Analytics (GCA). Earlier Junior/Intern roles share the supplied May 2025–June 2026 range; preserve the school-term break and do not invent split dates. Monitoring tools are installed in the personal lab, owner-reported pending artifacts. Credential completions are owner-reported; missing issuer dates/links are not invented. The clearance remains exactly “Active DoD Secret Security Clearance.”
 
 Update content/resume.json for the safe résumé, regenerate its PDF and receipt with scripts/generate-resume.py, and inspect both pages. The build generates the text version. Never copy supplied raw PDFs into public/. Only the exact GitHub Pages origin is allowed for public builds; publishing still requires approval.
+
+Use only https://www.linkedin.com/in/kaden-diaz-3236b4411/ for LinkedIn. The identity guard rejects all other profile slugs in public exports. See docs/release/LINKEDIN_IDENTITY_POLICY.md; do not infer the authoritative account from a browser session.

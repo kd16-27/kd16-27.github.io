@@ -22,5 +22,5 @@ it("keeps the checked résumé synchronized with its safe source", () => {
   );
   expect(resume.experience[0].company).toBe(experience[0].company);
   expect(resume.experience[0].period).toBe("June 2026 - Present");
-  expect(resume.credentialsNote).toContain("owner-reported");
+  expect(resume.credentialsNote).toMatch(/owner-reported/i);
 });

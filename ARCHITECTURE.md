@@ -28,7 +28,7 @@ Typed records → Zod validation at import → static route generation → expor
 
 ## Information design
 
-Project status and evidence context are separate. A completed NVX fix does not mark the whole rack restored. The lab’s owner-reported monitoring installations do not prove dashboards, alert delivery or sustained uptime. Public source does not prove executed physical commissioning. Recruiter lenses reprioritize identical records instead of producing alternate histories. The résumé review page and draft journal detail pages are noindex and excluded from the sitemap until their publication review is complete.
+Project status and evidence context are separate. A completed NVX fix does not mark the whole rack restored. The lab’s owner-reported monitoring installations do not prove dashboards, alert delivery or sustained uptime. Public source does not prove executed physical commissioning. Recruiter lenses reprioritize identical records instead of producing alternate histories. The professional résumé inherits the build indexing policy and is included in the sitemap. Draft journal detail pages remain noindex and excluded. Public build files remain local until an authorized deployment.
 
 ## Visual system
 
@@ -37,3 +37,5 @@ Deep navy foundations, cyan accents, restrained emerald/amber status cues, consi
 ## Extension
 
 Add records and regenerate static routes. The prepared public-safe review PDF is a static asset; source PDFs are excluded. A future contact backend or AI feature needs a separate threat/cost model, validation, rate limits, and secure server-side secrets. None is exposed by this release.
+
+LinkedIn identity is enforced by content/professional-links.mjs, unit tests and postbuild export scanning. Browser login identity never overrides the approved professional URL.

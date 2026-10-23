@@ -595,7 +595,7 @@ function requireExperience() {
 export function PrintButton() {
   return (
     <button className="button" onClick={() => window.print()}>
-      Print / save draft PDF <ArrowUpRight size={16} />
+      Print résumé <ArrowUpRight size={16} />
     </button>
   );
 }

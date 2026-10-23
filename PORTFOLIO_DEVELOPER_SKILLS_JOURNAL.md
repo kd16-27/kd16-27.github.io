@@ -27,3 +27,14 @@ Record your own practice below with date, exact files changed, command/result, w
 - **AI engineering:** future assistant and draft pipelines are designed around approved evidence, abstention, server-side authorization and human publication review. No model service is activated. Exercise: create five unsupported-qualification questions and write the required abstaining answers.
 
 Exact fresh results are in docs/release/RELEASE_VERIFICATION.md. These are AI-assisted delivered artifacts; owner-independent practice has not yet been demonstrated. Record date, files, observation and independent/guided status when exercises are completed.
+
+## October 23 — recruiter presentation and authoritative identity
+
+- **Shared content architecture:** HTML, text and PDF use content/resume.json. Highlights and project-status fields keep outcome and delivery evidence distinct. Exercise: add an evidence-backed highlight in a disposable copy and trace it through all three formats without inventing an outcome.
+- **JavaScript / TypeScript interoperation:** professional-links.mjs and resume-text.mjs expose typed contracts through .d.mts files. TypeScript caught the initially missing declaration (TS7016); the declaration fixed the contract without disabling strict checks. Exercise: change a helper call to pass the wrong type and explain the error.
+- **URL/API boundaries:** the current approved LinkedIn identity is independent of a browser session. URL parsing checks protocol, host, path, credentials and query data; escaped metadata is inspected too. Exercise: explain why a prefix comparison cannot distinguish two similar profile slugs, then test a misleading URL.
+- **Testing and debugging:** publication-copy regressions initially failed as intended. Independent review caught a case-sensitive owner-reported assertion; a case-insensitive assertion preserves the evidence requirement while allowing normal sentence capitalization. Exercise: reproduce the failure and explain why deleting the assertion would lose protection.
+- **Build and PDF artifacts:** postbuild rejects unapproved LinkedIn profiles in exported text; the PDF generator validates its source identity and produces a checksum receipt. Exercise: change JSON without regenerating the PDF, observe the receipt failure, regenerate and inspect both pages.
+- **Source control and release:** reviewed commits update the same draft branch. Publishing source, merging main and deploying a website remain separate actions. Exercise: compare the prior and new commit and identify which files affect visible content, test coverage and release documentation.
+
+Codex implemented and verified this milestone from owner direction. Record owner-led practice separately with date, exact files, prediction, observed result and guidance level. No profile edits/posts, account deletion, paid AI activation or public website launch is an accomplishment of this work.

@@ -32,10 +32,8 @@ export default function Page() {
           </div>
         </article>
         <EvidenceNote>
-          This is the completed degree supplied by Kaden. The supplied résumés
-          also report Computer Science coursework at Virginia Commonwealth
-          University. No completed Computer Science bachelor’s degree or WGU
-          enrollment is claimed.
+          Additional study: Computer Science coursework at Virginia Commonwealth
+          University.
         </EvidenceNote>
       </section>
     </>

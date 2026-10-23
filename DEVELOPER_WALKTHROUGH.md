@@ -40,7 +40,7 @@ Tests: desktop/mobile Playwright, 320-pixel overflow checks, keyboard skip link/
 
 ## Contact, résumé and errors
 
-`CopyEmail` copies only after a click and provides failure feedback; mail links open the visitor's email client and never send a message automatically. `PrintButton`, `app/resume/page.tsx` and `scripts/postbuild.mjs` provide printing and an explicitly labeled text résumé draft. A separate public-safe PDF/text review copy now uses content/resume.json; publication approval remains pending.
+`CopyEmail` copies only after a click and provides failure feedback; mail links open the visitor's email client and never send a message automatically. `PrintButton`, `app/resume/page.tsx` and `scripts/postbuild.mjs` provide printing and a shared-source professional text/PDF résumé using content/resume.json. The final candidate removes temporary release wording while deployment approval remains separate.
 
 `app/error.tsx` gives runtime failures a retry action; `app/not-found.tsx` and the local static server return a useful 404 route. `scripts/postbuild.mjs` checks internal links/assets after export. Exercise: request an unknown URL and distinguish the HTTP status from the visual page text; then verify the résumé download is the draft you expected.
 

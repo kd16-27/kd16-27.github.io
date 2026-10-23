@@ -48,10 +48,27 @@ for (const [file, hash] of [
     "Resume source/PDF receipt mismatch",
   );
 }
+assert(sitemap.includes(origin + "/resume/"), "Professional résumé in sitemap");
+const resumeHtml = readFileSync("out/resume/index.html", "utf8");
+assert(
+  resumeHtml.includes(
+    'name="robots" content="' +
+      (publicBuild ? "index, follow" : "noindex, follow") +
+      '"',
+  ),
+  "Résumé inherits build indexing policy",
+);
 const text = readFileSync("out/kaden-diaz-resume.txt", "utf8");
 assert(text.includes("Geospatial and Cloud Analytics (GCA)"));
 assert(text.includes("school-term break"));
 assert(text.includes("owner-reported pending artifacts"));
+assert(text.includes("Restored Crestron NVX video"));
+assert(
+  !/review copy|publication approval pending|supplied records group|not inferred/i.test(
+    text,
+  ),
+  "No temporary release copy in résumé",
+);
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walk(dir + "/" + e.name) : [dir + "/" + e.name],

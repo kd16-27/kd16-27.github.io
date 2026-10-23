@@ -4,9 +4,10 @@ export function resumeText(r) {
     r.title,
     r.contact,
     r.linkedin,
-    r.notice,
     "\nPROFILE",
     r.profile,
+    "\nSELECTED ENGINEERING ACCOMPLISHMENT",
+    ...r.highlights.flatMap((h) => [h.title, h.text, h.evidence]),
     "\nEXPERIENCE",
     ...r.experience.flatMap((e) => [
       e.role + " | " + e.company,
@@ -19,10 +20,10 @@ export function resumeText(r) {
     r.credentialsNote,
     ...r.credentials.map((c) => "- " + c),
     "\nSELECTED PROJECTS",
-    ...r.projects.map((p) => p.name + ": " + p.text),
+    ...r.projects.map((p) => p.name + " [" + p.status + "]: " + p.text),
     "\nEDUCATION",
     ...r.education.map((e) => e.school + " | " + e.qualification),
-    "\nReviewed " + r.reviewDate,
+    "\nUpdated " + r.updatedOn,
     "",
   ].join("\n");
 }

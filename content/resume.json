@@ -1,11 +1,9 @@
 {
   "name": "Kaden Diaz",
   "title": "Mid-Level AV Systems Engineer",
-  "reviewDate": "October 23, 2026",
   "contact": "KadenDiaz1627@gmail.com | github.com/kd16-27",
-  "linkedin": "https://www.linkedin.com/in/kaden-diaz-3236b4411",
-  "notice": "Public portfolio review copy. Publication approval pending.",
-  "profile": "AV Systems Engineer with hands-on federal and enterprise AV/VTC support, systems integration, signal-flow troubleshooting and technical mentoring. Software project owner building Linux, cloud and AI engineering skills through personal labs, training and AI-assisted development. Active DoD Secret Security Clearance.",
+  "linkedin": "https://www.linkedin.com/in/kaden-diaz-3236b4411/",
+  "profile": "Mid-Level AV Systems Engineer focused on federal and enterprise AV/VTC, networked AV integration, signal-flow troubleshooting and technical mentoring. Founder and lead developer of Vector Learning, building infrastructure, cloud and AI engineering skills through personal labs and AI-assisted software projects. Active DoD Secret Security Clearance.",
   "experience": [
     {
       "role": "Mid-Level AV Systems Engineer",
@@ -19,10 +17,10 @@
     {
       "role": "Junior AV Technician / AV Technician Intern",
       "company": "Geospatial and Cloud Analytics (GCA)",
-      "period": "May 2025 - June 2026 (grouped roles; school-term break)",
+      "period": "May 2025 - June 2026 (includes a school-term break)",
       "details": [
         "Supported AV/VTC troubleshooting, equipment integration and networked AV endpoints.",
-        "Supplied records group both roles in this range. Exact role transition dates and continuous employment are not inferred."
+        "Built practical experience with control, conferencing, audio and video systems while progressing from intern to Junior AV Technician."
       ]
     },
     {
@@ -35,7 +33,7 @@
     }
   ],
   "competencies": "AV systems integration | AV-over-IP | Crestron | Extron | AMX | Dante | DSP | HDCP/EDID | Technical mentoring | Linux lab administration | KVM/QEMU | Python and TypeScript project development",
-  "credentialsNote": "Selected completed credentials and training are owner-reported in the supplied records. Issuer verification links and earned dates are pending. Vendor training is distinct from professional certification.",
+  "credentialsNote": "Owner-reported completed credentials and training. Professional certification, vendor training and coursework are identified separately.",
   "credentials": [
     "AVIXA CAVT (certification)",
     "Audinate Dante Level 3; Crestron DMC-E, Commercial and Residential Technician, Modern Workplace (vendor training)",
@@ -45,28 +43,39 @@
   ],
   "projects": [
     {
-      "name": "Crestron NVX diagnosis",
-      "text": "Owner-reported restored video after correcting encoder/decoder roles; sanitized completed case study."
-    },
-    {
       "name": "OptiPlex Linux infrastructure",
-      "text": "Ubuntu, SSH and KVM/QEMU personal lab. Prometheus, Grafana and Uptime Kuma installed, owner-reported pending artifacts; monitoring reliability not yet evidenced."
+      "status": "Personal lab · owner-reported",
+      "text": "Ubuntu, SSH and KVM/QEMU lab. Prometheus, Grafana and Uptime Kuma installed, owner-reported pending artifacts; monitoring reliability remains unverified."
     },
     {
       "name": "Vector Learning",
-      "text": "Founder and lead developer of a technical-learning product in development. Current public feature scope remains unverified; private implementation details are excluded."
+      "status": "Product in development",
+      "text": "Founder and lead developer of a technical-learning platform. Public feature verification is ongoing."
     },
     {
-      "name": "AV Portfolio Suite / AV Integrity Lab / Cloud Task Suite",
-      "text": "Separate local software prototypes with bounded automated checks. Simulated AV data, configuration comparison and Flask/SQLite learning work; no production deployment is claimed."
+      "name": "AV Portfolio Suite",
+      "status": "Locally tested prototype",
+      "text": "AV planning calculations with 14 local calculation checks. Dashboard and commissioning data are simulated."
+    },
+    {
+      "name": "AV Integrity Lab",
+      "status": "Locally tested prototype",
+      "text": "PowerShell configuration-integrity lab and a separate Python companion with 19 local CLI checks. Original PowerShell execution remains unverified."
+    },
+    {
+      "name": "Cloud Task Suite",
+      "status": "Locally tested prototype",
+      "text": "Flask/SQLite learning application for duplicate review, protected records, atomic reservations and source-labeled retrieval. Improved local copy passed 34 application tests."
     },
     {
       "name": "AV Operations Command Center",
-      "text": "Existing Base44 platform prototype. Seven entity schemas inspected; source, runtime acceptance and public deployment remain unverified."
+      "status": "Platform prototype",
+      "text": "Existing Base44 application with seven reviewed entity schemas for AV operations. Runtime acceptance and public deployment remain unverified."
     },
     {
       "name": "Engineering portfolio",
-      "text": "Content-driven Next.js/React/TypeScript static portfolio, implemented with AI assistance. Owner review, exercises and ongoing maintenance tracked separately."
+      "status": "Static portfolio · locally tested",
+      "text": "Next.js, React and TypeScript website with case studies, evidence filters and automated checks. Implemented with AI assistance; owner-led practice is recorded separately."
     }
   ],
   "education": [
@@ -76,7 +85,15 @@
     },
     {
       "school": "Virginia Commonwealth University",
-      "qualification": "Computer Science coursework; no Computer Science degree claimed."
+      "qualification": "Computer Science coursework"
+    }
+  ],
+  "updatedOn": "2026-10-23",
+  "highlights": [
+    {
+      "title": "Restored Crestron NVX video",
+      "text": "Traced a video-routing failure to conflicting endpoint roles, corrected the encoder/decoder configuration and supported the technician through verification.",
+      "evidence": "Completed troubleshooting case · owner-reported"
     }
   ]
 }

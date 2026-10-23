@@ -52,3 +52,7 @@ No active remaining registry findings were observed. No source packages, depende
 This review covers the supplied five audit entries and current npm advisory results. It does not prove the absence of unknown vulnerabilities, verify package signatures or integrity of every installed file, replace application security review, or validate deployed hosting behavior. Static-export configuration and development-only package classification are supporting exposure evidence, not a blanket guarantee about every future build or configuration.
 
 Local evidence is retained outside the release tree in `work/release-review/dependencies/`: the previous audit snapshot, full and production audit JSON, installed dependency tree, registry metadata, check context, and npm request logs. No runtime tests, builds, applications, or proof-of-concept payloads were run as part of this advisory review.
+
+## Final candidate refresh
+
+Fresh full and production registry audits during the final October 23 candidate pass again returned zero findings. No package or lockfile changes were made. The earlier advisory history and withdrawal-versus-patch distinction remain as recorded above.

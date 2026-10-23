@@ -55,12 +55,9 @@ export default function Page() {
           </aside>
         </div>
         <EvidenceNote>
-          The current Mid-Level AV Systems Engineer role and June 2026 start are
-          owner-approved. The supplied résumés group Junior AV Technician and
-          internship experience within May 2025–June 2026; the exact role
-          transition is not established and the school-term break is retained.
-          Descriptions omit employer systems, customer identifiers, and
-          sensitive configuration details.
+          Explore selected troubleshooting and integration examples in the case
+          studies. Each project shows its current status, result and supporting
+          evidence.
         </EvidenceNote>
       </section>
     </>

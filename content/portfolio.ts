@@ -1,5 +1,6 @@
 import { additionalProjects } from "./additional-projects";
 import { z } from "zod";
+import { approvedLinkedIn } from "./professional-links.mjs";
 import { siteConfig } from "./site-config";
 export const siteUrl = siteConfig.siteUrl;
 export const profile = {
@@ -7,7 +8,7 @@ export const profile = {
   title: "Mid-Level AV Systems Engineer",
   email: "KadenDiaz1627@gmail.com",
   github: "https://github.com/kd16-27",
-  linkedin: "https://www.linkedin.com/in/kaden-diaz-3236b4411",
+  linkedin: approvedLinkedIn,
   vector: "https://vector-learning-kd.diazkaden789.chatgpt.site",
   clearance: "Active DoD Secret Security Clearance.",
   tagline:
@@ -652,11 +653,11 @@ export const experience = [
     company: "Geospatial and Cloud Analytics (GCA)",
     period: "May 2025 — June 2026 · school-term break",
     date: "2025-05",
-    label: "Earlier roles · grouped résumé dates",
-    text: "Progressed from an AV internship to Junior AV Technician; the supplied résumés group these roles within one date range.",
+    label: "Early AV experience",
+    text: "Progressed from AV internship support to Junior AV Technician responsibilities.",
     details: [
       "Supported AV/VTC troubleshooting, equipment integration and networked AV endpoints.",
-      "The internship included a school-term break. Exact role transition dates and a continuous employment period are not inferred.",
+      "Built practical experience with control, conferencing, audio and video systems.",
     ],
     tags: ["AV foundations", "Troubleshooting", "Hands-on learning"],
   },

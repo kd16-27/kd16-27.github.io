@@ -5,9 +5,8 @@ import resume from "@/content/resume.json";
 export const metadata = {
   title: "Résumé",
   description:
-    "Kaden Diaz’s public-safe engineering résumé, prepared from supplied professional records.",
+    "Kaden Diaz’s AV systems engineering experience, selected accomplishments, technical projects and completed training.",
   alternates: { canonical: "/resume/" },
-  robots: { index: false, follow: true },
 };
 export default function Page() {
   return (
@@ -16,7 +15,7 @@ export default function Page() {
         eyebrow="PROFESSIONAL RÉSUMÉ"
         title="The experience,"
         accent="in one place."
-        description="A public-safe review copy prepared from the supplied October 23 professional records. Final publication approval is pending."
+        description="AV systems engineering experience, practical technical accomplishments, and projects across software and infrastructure."
       />
       <section className="container page-content">
         <div className="resume-toolbar">
@@ -33,10 +32,7 @@ export default function Page() {
           </a>
         </div>
         <article className="resume-sheet">
-          <div className="draft-banner">
-            {resume.notice} · {resume.reviewDate}
-          </div>
-          <h2 style={{ marginTop: 30 }}>{resume.name}</h2>
+          <h2>{resume.name}</h2>
           <p>
             {resume.title}
             <br />
@@ -44,6 +40,14 @@ export default function Page() {
           </p>
           <h3>Profile</h3>
           <p>{resume.profile}</p>
+          <h3>Selected engineering accomplishment</h3>
+          {resume.highlights.map((h) => (
+            <section key={h.title}>
+              <h4>{h.title}</h4>
+              <p>{h.text}</p>
+              <small>{h.evidence}</small>
+            </section>
+          ))}
           <h3>Professional experience</h3>
           {resume.experience.map((e) => (
             <section key={e.role}>
@@ -70,7 +74,11 @@ export default function Page() {
           <h3>Selected projects</h3>
           {resume.projects.map((p) => (
             <p key={p.name}>
-              <strong>{p.name}:</strong> {p.text}
+              <strong>{p.name}</strong>
+              <br />
+              <small>{p.status}</small>
+              <br />
+              {p.text}
             </p>
           ))}
           <h3>Education</h3>

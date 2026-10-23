@@ -25,3 +25,9 @@ No invented adoption, uptime, savings, measured production performance, employer
 Directed reconciliation of supplied professional records and public-content boundaries; confirmed the employer spelling and owner-reported monitoring installations. A separate GitHub-history-based release candidate adds public/review build guards, shared-source safe résumé downloads, repeatable Pages deployment configuration, source/artifact checks and future intelligence design. See docs/release/RELEASE_VERIFICATION.md for measured validation and remaining gaps.
 
 This supports documented product ownership, software architecture, testing and DevOps learning. Codex implemented and tested the changes; independent owner coding exercises and mastery remain to be recorded. No source push, merge, launch, paid AI activation or production change has occurred.
+
+## October 23 — professional release candidate and identity controls
+
+Directed recruiter-focused refinement of the shared-source résumé and portfolio while retaining official titles/dates and honest project status. A completed owner-reported troubleshooting result is prominent; software prototypes, schema-only platform evidence and monitoring installations retain their limits. Established the sole approved LinkedIn identity and authorized a safe sign-out of the retired browser session.
+
+Delivered AI-assisted software work includes a pure JavaScript URL policy with TypeScript declarations, unit/export/browser regression coverage, regenerated PDF/source checksums, independent review and a complete launch checklist. Exact fresh validation belongs to docs/release/FINAL_CANDIDATE_REPORT.md. This records product direction, content architecture, testing/debugging, privacy and DevOps work; it does not claim independent owner programming mastery, new credentials or deployed production outcomes. Original projects and checkpoints remain preserved.

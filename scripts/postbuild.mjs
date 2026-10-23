@@ -1,6 +1,7 @@
 import { writeFileSync, readdirSync, readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { resumeText } from "./resume-text.mjs";
+import { assertApprovedLinkedInProfiles } from "../content/professional-links.mjs";
 const resume = JSON.parse(readFileSync("content/resume.json", "utf8"));
 writeFileSync("out/kaden-diaz-resume.txt", resumeText(resume));
 writeFileSync("out/.nojekyll", "");
@@ -11,6 +12,11 @@ function walk(dir) {
 }
 const html = walk("out").filter((p) => p.endsWith(".html"));
 const broken = [];
+for (const file of walk("out").filter((f) =>
+  /\.(html|txt|js|json|xml|svg)$/.test(f),
+)) {
+  assertApprovedLinkedInProfiles(readFileSync(file, "utf8"), file);
+}
 for (const file of html) {
   const text = readFileSync(file, "utf8");
   for (const match of text.matchAll(
@@ -29,5 +35,5 @@ for (const file of html) {
 if (broken.length)
   throw new Error(`Broken internal links:\n${[...new Set(broken)].join("\n")}`);
 console.log(
-  `Export verified: ${html.length} HTML files; internal links and assets resolve. Public-safe review résumé generated.`,
+  `Export verified: ${html.length} HTML files; internal links and assets resolve. Sanitized professional résumé generated.`,
 );

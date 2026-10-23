@@ -18,10 +18,9 @@ export default function Page() {
       />
       <section className="container page-content">
         <EvidenceNote>
-          Completion statuses are supplied by Kaden. Dates and public
-          verification links have not been supplied. Credential types are
-          labeled conservatively; vendor program titles and certificate
-          documents should be reviewed before external verification claims.
+          Completions are owner-reported. Certifications, vendor training and
+          coursework are labeled separately. Issuer links and earned dates will
+          be added when available.
           {profile.clearance} Clearance is listed separately from credentials.
         </EvidenceNote>
         <CredentialExplorer />

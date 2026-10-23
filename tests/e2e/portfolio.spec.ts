@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import resumeReceipt from "../../content/resume-receipt.json";
 test("project filters intersect and can reset", async ({ page }) => {
   await page.goto("/projects/");
   await page
@@ -32,7 +35,7 @@ test("skills filter by actual evidence context", async ({ page }) => {
   await expect(page.locator(".skill-card")).toHaveCount(3);
   await expect(page.locator(".skill-card").first()).toContainText("Linux");
 });
-test("case studies, timeline, architecture, and review resume work", async ({
+test("case studies, timeline, architecture, and professional resume work", async ({
   page,
 }) => {
   await page.goto("/");
@@ -42,9 +45,10 @@ test("case studies, timeline, architecture, and review resume work", async ({
   const intern = page.getByRole("button", { name: /AV Technician Intern/ });
   await intern.click();
   await expect(intern).toHaveAttribute("aria-expanded", "true");
-  await expect(page.locator("#detail-intern")).toContainText(
-    "school-term break",
-  );
+  await expect(
+    page.locator("article").filter({ has: intern }).locator(".timeline-date"),
+  ).toContainText("school-term break");
+  await expect(page.locator("#detail-intern")).toBeVisible();
   await page.goto("/projects/crestron-nvx-troubleshooting/");
   await expect(
     page.getByRole("heading", { name: "Results & evidence" }),
@@ -52,10 +56,11 @@ test("case studies, timeline, architecture, and review resume work", async ({
   await expect(page.locator(".concept-step")).toHaveCount(5);
   await page.goto("/resume/");
   await expect(
-    page.getByText(
-      "Public portfolio review copy. Publication approval pending.",
-    ),
+    page.getByRole("heading", { name: "Restored Crestron NVX video" }),
   ).toBeVisible();
+  await expect(page.locator("main")).not.toContainText(
+    /draft|review copy|publication approval pending|not inferred|supplied records/i,
+  );
   const response = await page.request.get("/kaden-diaz-resume.txt");
   expect(response.ok()).toBe(true);
 });
@@ -289,6 +294,16 @@ for (const slug of [
           () => document.documentElement.scrollWidth <= innerWidth,
         ),
       ).toBe(true);
+      await page.setViewportSize({ width: 320, height: 760 });
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+      const accessibility = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+        .analyze();
+      expect(accessibility.violations).toEqual([]);
       expect(errors).toEqual([]);
     },
   );
@@ -313,4 +328,64 @@ test("public metadata and safe resume downloads", async ({ page }) => {
   const text = await page.request.get("/kaden-diaz-resume.txt");
   expect(await text.text()).toContain("Geospatial and Cloud Analytics (GCA)");
   expect(await text.text()).toContain("Active DoD Secret Security Clearance.");
+});
+
+for (const [name, file, mime] of [
+  ["Download résumé PDF", "kaden-diaz-resume.pdf", "application/pdf"],
+  [
+    "Download text version",
+    "kaden-diaz-resume.txt",
+    "text/plain; charset=utf-8",
+  ],
+]) {
+  test("resume download click: " + file, async ({ page }) => {
+    await page.goto("/resume/");
+    const [download] = await Promise.all([
+      page.waitForEvent("download"),
+      page.getByRole("link", { name, exact: true }).click(),
+    ]);
+    expect(download.suggestedFilename()).toBe(file);
+    expect(await download.failure()).toBeNull();
+    const path = await download.path();
+    expect(path).not.toBeNull();
+    const data = readFileSync(path!);
+    const response = await page.request.get("/" + file);
+    expect(response.headers()["content-type"]).toBe(mime);
+    if (file.endsWith(".pdf"))
+      expect(createHash("sha256").update(data).digest("hex")).toBe(
+        resumeReceipt.pdfSha256,
+      );
+    else {
+      expect(data.toString()).toContain("Restored Crestron NVX video");
+      expect(data.toString()).not.toMatch(
+        /review copy|publication approval pending|supplied records group/i,
+      );
+    }
+  });
+}
+
+test("outgoing LinkedIn links and Person metadata use only the current account", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const links = page.locator('a[href*="linkedin.com/in/"]');
+  expect(await links.count()).toBeGreaterThan(0);
+  for (const href of await links.evaluateAll((nodes) =>
+    nodes.map((n) => n.getAttribute("href")),
+  ))
+    expect(href).toBe("https://www.linkedin.com/in/kaden-diaz-3236b4411/");
+  const person = JSON.parse(
+    (await page.locator('script[type="application/ld+json"]').textContent()) ||
+      "{}",
+  );
+  expect(person.sameAs).toContain(
+    "https://www.linkedin.com/in/kaden-diaz-3236b4411/",
+  );
+  await page.goto("/resume/");
+  await expect(
+    page.getByRole("link", { name: "LinkedIn", exact: true }).first(),
+  ).toHaveAttribute(
+    "href",
+    "https://www.linkedin.com/in/kaden-diaz-3236b4411/",
+  );
 });
