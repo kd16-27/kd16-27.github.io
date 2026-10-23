@@ -1,7 +1,7 @@
 "use client";
 import { Github, Linkedin } from "@/components/brand-icons";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   ArrowUpRight,
@@ -41,11 +41,57 @@ export function Header() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [light, setLight] = useState(false);
+  const mobileToggle = useRef<HTMLButtonElement>(null);
+  const mobileNavigation = useRef<HTMLElement>(null);
+  const desktopNavigation = useRef<HTMLElement>(null);
+  const hiddenBreakpointFocus = useRef<HTMLElement | null>(null);
   useEffect(() => {
     const stored = localStorage.getItem("kd-theme");
     const isLight = stored === "light";
     document.documentElement.dataset.theme = isLight ? "light" : "dark";
   }, []);
+  useEffect(() => {
+    const mobileViewport = window.matchMedia("(max-width: 680px)");
+    function handleBreakpoint(event: MediaQueryListEvent) {
+      // Browsers can blur a newly hidden link before delivering the media event.
+      const focused =
+        document.activeElement === document.body
+          ? (hiddenBreakpointFocus.current ?? document.activeElement)
+          : document.activeElement;
+      hiddenBreakpointFocus.current = null;
+      if (
+        !event.matches &&
+        (focused === mobileToggle.current ||
+          mobileNavigation.current?.contains(focused))
+      ) {
+        desktopNavigation.current?.querySelector("a")?.focus();
+      } else if (
+        event.matches &&
+        desktopNavigation.current?.contains(focused)
+      ) {
+        mobileToggle.current?.focus();
+      }
+      setOpen(false);
+    }
+    mobileViewport.addEventListener("change", handleBreakpoint);
+    return () => mobileViewport.removeEventListener("change", handleBreakpoint);
+  }, []);
+  function closeMenu(restoreFocus = false) {
+    setOpen(false);
+    if (restoreFocus) mobileToggle.current?.focus();
+  }
+  function navigationLinks(restoreFocus = false) {
+    return nav.map(([name, url]) => (
+      <Link
+        key={url}
+        href={url}
+        aria-current={path === url ? "page" : undefined}
+        onClick={() => closeMenu(restoreFocus)}
+      >
+        {name}
+      </Link>
+    ));
+  }
   function toggle() {
     const next = document.documentElement.dataset.theme !== "light";
     setLight(next);
@@ -57,7 +103,24 @@ export function Header() {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <header className="header">
+      <header
+        className="header"
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && open) {
+            event.preventDefault();
+            closeMenu(true);
+          }
+        }}
+        onBlur={(event) => {
+          hiddenBreakpointFocus.current =
+            !event.relatedTarget && event.target.getClientRects().length === 0
+              ? event.target
+              : null;
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            closeMenu();
+          }
+        }}
+      >
         <div className="container header-inner">
           <Link
             href="/"
@@ -77,19 +140,11 @@ export function Header() {
             </span>
           </Link>
           <nav
+            ref={desktopNavigation}
             aria-label="Main navigation"
-            className={open ? "nav is-open" : "nav"}
+            className="nav desktop-nav"
           >
-            {nav.map(([name, url]) => (
-              <Link
-                key={url}
-                href={url}
-                aria-current={path === url ? "page" : undefined}
-                onClick={() => setOpen(false)}
-              >
-                {name}
-              </Link>
-            ))}
+            {navigationLinks()}
           </nav>
           <div className="header-actions">
             <button
@@ -103,14 +158,24 @@ export function Header() {
               Let’s connect <ArrowUpRight size={14} />
             </Link>
             <button
+              ref={mobileToggle}
               className="icon-button mobile-toggle"
               onClick={() => setOpen(!open)}
               aria-label={open ? "Close navigation" : "Open navigation"}
               aria-expanded={open}
+              aria-controls="mobile-navigation"
             >
               {open ? <X /> : <Menu />}
             </button>
           </div>
+          <nav
+            ref={mobileNavigation}
+            id="mobile-navigation"
+            aria-label="Main navigation"
+            className={open ? "nav mobile-nav is-open" : "nav mobile-nav"}
+          >
+            {navigationLinks(true)}
+          </nav>
         </div>
       </header>
     </>

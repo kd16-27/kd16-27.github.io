@@ -1,6 +1,6 @@
 # Complete launch checklist — final candidate
 
-Status as of October 23, 2026. Development-branch updates and Draft PR #1 review are authorized. No hosting-source change, main merge, deployment, paid service, LinkedIn profile edit/post or account deletion is authorized.
+Status as of October 23, 2026. Development-branch updates and Draft PR #1 review are authorized. The separately approved Pages source transition to GitHub Actions is complete. Main merge, workflow dispatch/deployment, further hosting/environment changes, paid services, LinkedIn profile edits/posts and account deletion remain unapproved.
 
 ## Candidate preparation completed
 
@@ -11,12 +11,15 @@ Status as of October 23, 2026. Development-branch updates and Draft PR #1 review
 - [x] Use only the approved current LinkedIn identity in content, metadata and downloads; guard against other accounts at unit/build/browser levels.
 - [x] Verify the approved profile through normal Chrome; sign out of the detected retired session without editing/posting/deleting accounts.
 - [x] Rebuild and visually inspect both sanitized PDF pages; verify source/PDF SHA-256 receipt and actual download bytes.
-- [x] Run 24 unit tests, 96 desktop/mobile browser checks, review/public builds, internal links/assets, all ten case routes and 320px layouts.
+- [x] Preserve the earlier checkpoint and pass the current complete suite: 24 unit tests, 132 desktop/mobile browser checks, review/public builds and export verification. See ACCESSIBILITY_REPAIR_RELEASE_REPORT.md.
 - [x] Run automated axe checks, keyboard/mobile navigation and theme checks; inspect desktop/mobile résumé presentation.
 - [x] Check all nine outgoing destinations/actions; LinkedIn's automation limitation is supplemented by the normal-browser identity check. Mail actions were validated without sending email.
 - [x] Complete independent review and fix identified assertion regressions.
 - [x] Refresh full/production dependency audits and scan candidate source/export for secrets and restricted information.
-- [x] Record the current host as branch-based main/root publication, with no settings changed.
+- [x] Record the original branch/main/root host, then preserve the separately authorized GitHub Actions source transition and unchanged live-site evidence.
+- [x] Repair mobile forward Tab order, Escape/close/route focus restoration, focus exit without a trap and breakpoint focus transfer.
+- [x] Repair Experience heading and journal-link wrapping; include both sides of the 680/681 breakpoint and theme/text-spacing coverage.
+- [x] Complete native keyboard/AX-tree review at actual 200% browser zoom; keep this distinct from spoken assistive acceptance.
 
 ## Owner review and acceptance — pending
 
@@ -26,12 +29,13 @@ Status as of October 23, 2026. Development-branch updates and Draft PR #1 review
 - [ ] Complete manual screen-reader acceptance; decide whether additional Firefox/Safari/device checks are needed. Automated axe does not establish full accessibility. The PDF is untagged; accessible HTML/text alternatives remain available.
 - [ ] Retain both prior and final candidate receipts/packages and a clear rollback reference.
 
-## Hosting transition before merge — separate approval required
+## Hosting transition before merge — separately approved and completed
 
-- [ ] Explicitly approve changing the existing Pages publication source. **Current main/root branch publication means a merge can trigger a public change even though the new YAML is manual-only.** Do not merge while relying only on that YAML to prevent publication.
-- [ ] After approval, record the current Pages source, current public response, deployment run/artifact and rollback procedure.
-- [ ] Transition the existing Pages source to GitHub Actions without dispatching deployment; verify legacy branch publication is no longer active and the current site remains preserved. If that cannot be established, stop before merging and resolve the publication behavior with the owner.
-- [ ] Verify github-pages environment restrictions and review protection supported by the account/repository; never create a paid service to obtain them automatically. Record any limitation and agreed manual gate.
+- [x] Receive explicit source-only approval; switch Source from Deploy from a branch (main/root) to GitHub Actions and verify persistence after reload.
+- [x] Preserve the previous public homepage/stylesheet hashes, original README-only source, historical run 33534640713 and stage-specific rollback plan. No historical downloadable build artifact was available.
+- [x] Verify the prior website remained byte-identical and no new workflow run, merge or deployment accompanied the transition.
+- [x] Inspect existing environment rules: main only; required reviewers/timer unchecked; administrator bypass checked. No rule, secret, variable, custom domain or HTTPS setting was changed.
+- [ ] Immediately before merge, recheck that GitHub Actions remains the source, no unexpected publisher is queued and the existing live site is preserved. Do not change the source back to main/root.
 
 ## Source integration — separate approval required
 
@@ -44,6 +48,7 @@ Status as of October 23, 2026. Development-branch updates and Draft PR #1 review
 
 - [ ] Explicitly approve public launch of the exact main commit/artifact and replacement of the existing landing page. Merge approval alone is insufficient.
 - [ ] Confirm intended URL, HTTPS, canonical origin, robots/sitemap and public résumé are correct; verify no private files or credentials in the artifact.
+- [ ] Prepare/review a usable recovery route. The current workflow builds the portfolio and cannot blindly re-run an expired legacy artifact; any rollback publication/settings change needs separate approval.
 - [ ] Dispatch only the prepared manual Pages release on main with its explicit confirmation, after all quality gates and required environment review. Do not configure a paid host, domain or AI service without approval.
 - [ ] Record the workflow, exact commit, artifact, URL and terminal deployment result. A successful local build is not a successful deployment.
 

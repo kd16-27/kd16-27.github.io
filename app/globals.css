@@ -184,7 +184,6 @@ svg {
   display: flex;
   align-items: center;
   position: relative;
-  transition: color 0.2s;
 }
 .nav a:hover,
 .nav a[aria-current] {
@@ -215,6 +214,9 @@ svg {
   color: var(--muted);
 }
 .mobile-toggle {
+  display: none;
+}
+.mobile-nav {
   display: none;
 }
 .button {
@@ -1510,6 +1512,7 @@ svg {
   line-height: 1.1;
   max-width: 850px;
   margin-bottom: 24px;
+  overflow-wrap: anywhere;
 }
 .page-intro h1 span {
   color: var(--accent);
@@ -2532,6 +2535,14 @@ html[data-theme="light"] .system-node.selected {
     font-size: 27px;
   }
 }
+@media (min-width: 681px) and (max-width: 750px) {
+  .header-inner {
+    gap: 8px;
+  }
+  .desktop-nav {
+    gap: 11px;
+  }
+}
 @media (max-width: 680px) {
   .container {
     width: calc(100% - 40px);
@@ -3299,8 +3310,10 @@ html[data-theme="light"] .scroll-cue {
   }
 }
 .case-section .text-link,
-.note-body .text-link {
+.note-body .text-link,
+.milestone-list .text-link {
   white-space: normal;
+  max-width: 100%;
 }
 
 .project-card p.delivery-context {

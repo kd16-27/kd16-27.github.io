@@ -4,15 +4,15 @@
 
 Use the existing kd16-27/kd16-27.github.io repository and GitHub Pages. Next.js exports every required route and asset to static files; filters, theme, navigation and diagrams run in the browser. No required feature needs a persistent server, runtime secret or paid host. Vercel adds no required capability for this release. Any future authenticated dashboard, inference API or private processing needs a separately approved backend.
 
-Draft PR #1 holds the owner-authorized development branch codex/portfolio-release-preparation-20261023. It retains the original README-only history based on 0e8b2bcc974fc3fc1aac17764914710e0b7300b8, preserves the original README, and builds on reviewed commit 292b1868460ff8d4fc749791da8482c56f6863ed. Branch refinements are authorized; main merge, hosting changes and public launch are not.
+Draft PR #1 holds the owner-authorized development branch codex/portfolio-release-preparation-20261023. It retains the original README-only history based on 0e8b2bcc974fc3fc1aac17764914710e0b7300b8 and builds on reviewed checkpoints 292b186 and aecdbe9. The initial README remains in history. Branch refinements/updates and the completed source-only hosting transition are authorized; main merge, workflow dispatch, further hosting changes and public launch are not.
 
 Earlier portfolio and application copies remain outside this repository. The local pre-push guard restricts uploads pending explicit authorization; it is not a hosted branch-protection policy.
 
-## Existing hosting and merge side effects
+## Completed hosting transition and current state
 
-A read-only normal-browser check of repository Settings → Pages on October 23 confirms **Deploy from a branch**, branch **main**, directory **/ (root)**, with HTTPS enforced. The last displayed deployment is historical run 33534640713. The original public README homepage remains served. No setting was changed.
+A read-only normal-browser audit on October 23 first identified Deploy from a branch → main → / (root). The owner then separately authorized only the transition to **GitHub Actions**, which was saved and verified after reload. The public homepage and stylesheet remained byte-identical; Actions retained only historical run 33534640713. No template, workflow run, environment change, merge or portfolio launch accompanied the transition.
 
-**Updating main can trigger that existing branch-based publication.** The candidate's manual-only workflows do not disable it. Do not merge on the assumption that deployment will wait for a manual dispatch.
+The previous branch publisher is no longer the configured source. Reconfirm the source before any merge; a future change back to branch/main/root would reconnect main updates to automatic publication. The existing github-pages environment permits main only, with required reviewers and wait timer unchecked and administrator bypass checked. Manual owner approval remains a procedural gate, not a configured required-reviewer rule. HTTPS remains enforced and no custom domain is configured.
 
 ## Repeatable local build
 
@@ -23,15 +23,15 @@ npm run build instead creates a local review export with noindex and loopback me
 ## Approval sequence
 
 1. Owner reviews the complete candidate, safe résumé, exact PR head and remaining evidence/accessibility limits. Any later source change requires appropriate checks/review.
-2. **Before any merge, obtain explicit approval for the existing Pages-source transition.** Record current source/settings, public response, deployed commit/artifact and rollback state.
-3. Only after that approval, switch the existing source to GitHub Actions **without dispatching a deployment**. Verify the legacy main/root branch publisher is no longer active and the current site remains preserved. If preservation or trigger behavior cannot be established, stop before merge and resolve it with the owner.
-4. Check github-pages environment/branch restrictions and review protections available without a paid upgrade; record any limitation and agreed manual gate.
+2. Read-only recheck the already approved/completed GitHub Actions source transition, existing live content, historical deployment and main-only environment restrictions. Preserve the original transition receipt and rollback snapshots. Do not repeat the settings change or add a reviewer/rule without approval.
+3. Resolve or explicitly accept outstanding accessibility and evidence limits. Spoken screen-reader acceptance stays pending until an actual usable session; DOM/axe and zoom checks do not establish it.
+4. Review the recovery plan before public launch. Historical artifact downloads are unavailable; the current workflow is not an arbitrary-artifact rollback tool. Prepare/review a usable recovery route under separate authorization before relying on one.
 5. Obtain **separate explicit merge approval** for the reviewed PR head, then merge only that revision. Record and verify the resulting main commit/tree. Deployment remains undispatched.
 6. Rebuild/verify the exact resulting main revision. Obtain authorization for any desired hosted quality-check run; do not silently add automatic push/PR triggers. Record final artifact hash and test evidence.
-7. Obtain **separate explicit public-launch approval** for that exact main commit/artifact and replacement of the landing page. Only then dispatch Owner-approved GitHub Pages release on main with the confirmation input and required environment review.
+7. Obtain **separate explicit public-launch approval** for that exact main commit/artifact and replacement of the landing page. Only then dispatch Owner-approved GitHub Pages release on main with the confirmation input and any separately approved environment review.
 8. Verify the real public URL, HTTPS, all ten cases, responsive/keyboard navigation, direct routes, genuine 404, PDF/text downloads and PDF hash, canonical/OG/JSON-LD/robots/sitemap, outgoing links and actual response headers. Record the deployment run and terminal result.
 
-All candidate workflow actions are pinned. Build uses contents/pages-read permissions; only the deploy job requests pages-write and OIDC. Its explicit main/confirmation checks and successful quality gates are additional safeguards, not owner approval. Candidate YAML has no push/PR trigger; the current legacy publisher above remains active until an authorized transition is completed.
+All candidate workflow actions are pinned. Build uses contents/pages-read permissions; only the deploy job requests pages-write and OIDC. Its explicit main/confirmation checks and successful quality gates are additional safeguards, not owner approval. Candidate YAML has no push/PR trigger and was not changed by these accessibility repairs. No workflow is to be dispatched during review.
 
 ## Headers and rollback
 
@@ -39,4 +39,6 @@ GitHub Pages does not apply public/_headers or vercel.json. Preview-server CSP a
 
 Preserve deployment history and rollback evidence before replacement. If acceptance fails, report the exact issue and obtain approval to restore the previously reviewed artifact/commit through a deployment. Do not reset or erase history, rewrite Integrity baseline evidence or point the public site at a private lab/employer system.
 
-See [complete checklist](docs/release/LAUNCH_CHECKLIST.md), [current report](docs/release/FINAL_CANDIDATE_REPORT.md), [GitHub Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Next.js static export](https://nextjs.org/docs/app/guides/static-exports).
+Before merge, restoring branch/main/root is only an option after explicit restoration approval and verification that main still equals the original 0e8b2bcc974fc3fc1aac17764914710e0b7300b8. After merge, do not restore main/root blindly: it will contain portfolio source. Prefer a separately reviewed/approved deployment of the safe prior artifact, preserving main/history. See the stage-specific [rollback plan](docs/release/MANUAL_ACCESSIBILITY_CONTENT_AND_HOSTING_REVIEW.md). Local captures preserve the prior homepage/stylesheet and README-only source; they are not the original complete Pages build artifact.
+
+See [complete checklist](docs/release/LAUNCH_CHECKLIST.md), [current repair report](docs/release/ACCESSIBILITY_REPAIR_RELEASE_REPORT.md), [GitHub Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) and [Next.js static export](https://nextjs.org/docs/app/guides/static-exports).

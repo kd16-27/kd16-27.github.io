@@ -64,3 +64,15 @@ Each sibling project has `LOCAL_IMPROVEMENTS.md` with its exact changed function
 - Vector: unfinished code fences stay literal; all private source remains outside portfolio assets.
 - OptiPlex: default-dry-run aggregate Linux health tool and synthetic fixtures; no hardware health claim.
 - Command Center: executable model-contract review only; source/runtime changes remain blocked by unavailable export access.
+
+## Accessibility repair: focus order, responsive state and wrapping
+
+In components/ui.tsx, Header keeps one navigation data array and renders responsive desktop/mobile views. CSS hides the inactive view, including its links from keyboard and accessibility navigation. The mobile view follows the toggle in DOM order; desktop links retain their original position. This avoids positive tabindex values and preserves natural forward/reverse Tab order.
+
+React state `open` controls visibility and aria-expanded. `mobileToggle`, `mobileNavigation` and `desktopNavigation` refs point to real DOM nodes without causing extra renders. `closeMenu(true)` restores the trigger after Escape or menu-link activation, including a link to the current page. Normal focus exit closes the menu while leaving focus in page content; a non-modal disclosure does not trap focus. The media-query listener moves focus only when a responsive switch hides the current navigation control, and cleans itself up on unmount. `hiddenBreakpointFocus` handles a browser race: a hidden link may blur to body before the media-query event is delivered.
+
+In app/globals.css, `overflow-wrap: anywhere` lets a long PageIntro heading word wrap when increased spacing needs more room. The milestone text-link override lets the long journal link wrap. A scoped 681–750px header rule gives the desktop navigation enough room just above the 680px mobile boundary. Text remains visible; no overflow-hiding rule masks the problem. Removing the navigation color interpolation prevents a transient low-contrast color when the stored theme is restored.
+
+tests/e2e/accessibility-repairs.spec.ts drives real keys through menu links, Escape, Space, same-page/new-route selection, focus exit and breakpoint transfer. Its spacing matrix covers 320, 390, 640, 680, 681 and 768px in both themes across nine main pages, with actual text-fragment bounds and document/body width checks. Spacing is reapplied before axe analysis. Viewport tests are not actual browser zoom; a separate native Chrome check at 200% verifies that behavior. DOM/axe observations are not spoken screen-reader acceptance.
+
+Exercises in a disposable copy: (1) predict each Tab target before running the keyboard test; (2) temporarily move mobile navigation before its trigger and observe the failed assertion; (3) remove heading wrapping and inspect the 320px spacing failure; (4) explain why checking both 680 and 681 catches a gap missed by 640/768; (5) explain why a CSS-hidden link needs focus transfer but ordinary page-content focus must not be stolen. Record the file, prediction, result and guidance level in the journal. Never run deployment as an exercise.

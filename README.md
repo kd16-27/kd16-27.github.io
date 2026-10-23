@@ -1,6 +1,6 @@
 # Kaden Diaz — Engineering Connected Systems
 
-Local release candidate for **kd16-27/kd16-27.github.io**, prepared on a dedicated branch from its existing Git history. The owner authorized development-branch refinements and updates to Draft PR #1. Main merge, hosting changes and public launch remain unapproved. Earlier portfolio checkpoints and original applications remain preserved.
+Release candidate for **kd16-27/kd16-27.github.io**, prepared on a dedicated branch from its existing Git history. The owner authorized development-branch refinements and updates to Draft PR #1. The separately approved Pages source transition to GitHub Actions is complete; the previous website remains unchanged. Main merge, workflow dispatch, further hosting changes and public launch remain unapproved. Earlier portfolio checkpoints and original applications remain preserved.
 
 Next.js 16 App Router, React, TypeScript, Tailwind and Zod generate a portable static website. It has ten case studies, evidence filters, technical milestones, accessible navigation and sanitized PDF/text résumé downloads. No database, API key, paid service, analytics or home-lab connection is required.
 
@@ -31,4 +31,4 @@ The candidate workflows are manual only. The Pages workflow additionally require
 
 ## Final professional candidate
 
-Recruiter copy now leads with the completed NVX case, keeps the verified combined earlier-role range and school break, and labels prototypes/lab work explicitly. Temporary résumé release notices are removed with owner authorization. The sole approved LinkedIn account is enforced in content, metadata, downloads and the build. See docs/release/LINKEDIN_IDENTITY_POLICY.md and docs/release/FINAL_CANDIDATE_REPORT.md. Draft PR #1 updates are authorized; merge and deployment are not.
+Recruiter copy leads with the completed NVX case, keeps the verified combined earlier-role range and school break, and labels prototypes/lab work explicitly. Temporary résumé release notices are removed with owner authorization. The sole approved LinkedIn account is enforced in content, metadata, downloads and the build. The current accessibility repairs and verification are in [the repair release report](docs/release/ACCESSIBILITY_REPAIR_RELEASE_REPORT.md). Earlier candidate results remain dated checkpoints. Draft PR #1 updates are authorized; merge and deployment are not.

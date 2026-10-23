@@ -31,3 +31,25 @@ This supports documented product ownership, software architecture, testing and D
 Directed recruiter-focused refinement of the shared-source résumé and portfolio while retaining official titles/dates and honest project status. A completed owner-reported troubleshooting result is prominent; software prototypes, schema-only platform evidence and monitoring installations retain their limits. Established the sole approved LinkedIn identity and authorized a safe sign-out of the retired browser session.
 
 Delivered AI-assisted software work includes a pure JavaScript URL policy with TypeScript declarations, unit/export/browser regression coverage, regenerated PDF/source checksums, independent review and a complete launch checklist. Exact fresh validation belongs to docs/release/FINAL_CANDIDATE_REPORT.md. This records product direction, content architecture, testing/debugging, privacy and DevOps work; it does not claim independent owner programming mastery, new credentials or deployed production outcomes. Original projects and checkpoints remain preserved.
+
+## October 23 — manual release assessment and hosting-risk preparation
+
+Directed a further recruiter-content, keyboard/visual accessibility and read-only Pages review of aecdbe9. All ten rendered case studies retained their completion, prototype, lab, simulation and future-work boundaries. The sanitized résumé was assessed without altering approved facts or the PDF; cleaner phrasing remains a proposal for review.
+
+Agent-operated review identified responsive-menu focus ordering and a narrow text-spacing overflow that prior automated checks did not cover. Spoken screen-reader acceptance remains pending; this milestone does not establish WCAG or PDF/UA conformance. The findings, reproduction steps, relevant files and acceptance criteria are documented in docs/release/MANUAL_ACCESSIBILITY_CONTENT_AND_HOSTING_REVIEW.md.
+
+Read-only hosting inspection verified legacy main/root publication, the main-only deployment environment and absence of required reviewers. Current landing-page responses and original source were preserved locally with checksums. Prepared separate hosting-transition, source-merge and public-launch gates and stage-specific rollback guidance, including the unavailable historical artifact. No setting, protection rule, workflow run, PR merge, public deployment or paid service was activated. These are local documentation addenda; the remote candidate remains aecdbe9.
+
+This supports documented product ownership, accessibility QA, evidence-aware technical communication, release planning and DevOps learning. Codex performed the review and authored the notes from owner direction; independent owner coding or assistive-testing proficiency is not inferred.
+
+### Subsequent owner-approved source-only hosting transition
+
+Authorized and completed a controlled transition from legacy main/root branch publication to the GitHub Actions Pages source. Verified persisted settings, unchanged live homepage/stylesheet hashes, unchanged main-only environment rules, unchanged draft PR/main revisions and no new workflow run. Preserved the earlier read-only review and rollback snapshots. This is a hosting-mechanism change, not a portfolio launch, merged source release, operational reliability result or completed accessibility acceptance. Codex executed the approved setting change; Kaden supplied the scope and authorization.
+
+## October 23 — accessibility repair release milestone
+
+Directed the repair of responsive navigation keyboard order, Escape/focus restoration, route closure and breakpoint focus handling, plus adaptable heading/link text and narrow desktop header spacing. Required tests to reproduce the initial failures, broader theme/text-spacing coverage and independent review before updating the existing review branch.
+
+Delivered AI-assisted work includes React state/ref focus handling, scoped CSS wrapping, real-key browser regressions, accessibility/contrast checks, release-status documentation and renewed privacy/security verification. Current results belong in docs/release/ACCESSIBILITY_REPAIR_RELEASE_REPORT.md. Existing professional claims and the sanitized résumé remain unchanged; completed AV outcomes, local prototypes, labs, simulations and future plans retain their evidence limits.
+
+This records requirements ownership, debugging, accessibility QA, responsive design, software testing and controlled release preparation. It does not claim spoken screen-reader acceptance, WCAG/PDF conformance certification, independent owner mastery, a merged source release or a portfolio launch. All original applications/checkpoints remain preserved; no new paid service or hosted automation is an accomplishment of this milestone.
