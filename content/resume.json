@@ -1,0 +1,82 @@
+{
+  "name": "Kaden Diaz",
+  "title": "Mid-Level AV Systems Engineer",
+  "reviewDate": "October 23, 2026",
+  "contact": "KadenDiaz1627@gmail.com | github.com/kd16-27",
+  "linkedin": "https://www.linkedin.com/in/kaden-diaz-3236b4411",
+  "notice": "Public portfolio review copy. Publication approval pending.",
+  "profile": "AV Systems Engineer with hands-on federal and enterprise AV/VTC support, systems integration, signal-flow troubleshooting and technical mentoring. Software project owner building Linux, cloud and AI engineering skills through personal labs, training and AI-assisted development. Active DoD Secret Security Clearance.",
+  "experience": [
+    {
+      "role": "Mid-Level AV Systems Engineer",
+      "company": "Geospatial and Cloud Analytics (GCA)",
+      "period": "June 2026 - Present",
+      "details": [
+        "Integrate and troubleshoot multi-vendor AV systems, networked endpoints, DSP, video distribution, cameras and conferencing technology.",
+        "Use signal-flow, HDCP/EDID and connectivity diagnosis; support AV drawings, bills of materials, service coordination and technician mentoring."
+      ]
+    },
+    {
+      "role": "Junior AV Technician / AV Technician Intern",
+      "company": "Geospatial and Cloud Analytics (GCA)",
+      "period": "May 2025 - June 2026 (grouped roles; school-term break)",
+      "details": [
+        "Supported AV/VTC troubleshooting, equipment integration and networked AV endpoints.",
+        "Supplied records group both roles in this range. Exact role transition dates and continuous employment are not inferred."
+      ]
+    },
+    {
+      "role": "In-Class AV Assistant",
+      "company": "Virginia Commonwealth University",
+      "period": "September - December 2025",
+      "details": [
+        "Supported classroom AV, Zoom and Microsoft Teams hybrid sessions, instructors and Executive MBA sessions."
+      ]
+    }
+  ],
+  "competencies": "AV systems integration | AV-over-IP | Crestron | Extron | AMX | Dante | DSP | HDCP/EDID | Technical mentoring | Linux lab administration | KVM/QEMU | Python and TypeScript project development",
+  "credentialsNote": "Selected completed credentials and training are owner-reported in the supplied records. Issuer verification links and earned dates are pending. Vendor training is distinct from professional certification.",
+  "credentials": [
+    "AVIXA CAVT (certification)",
+    "Audinate Dante Level 3; Crestron DMC-E, Commercial and Residential Technician, Modern Workplace (vendor training)",
+    "Extron ECS, NAV, ProDSP, Global Configurator Plus, GUI Designer, AV Associate (vendor training)",
+    "AMX Technician and Designer; NETGEAR NCE, NCE-AV and AV Levels 1-3; Q-SYS Level 0 (vendor training)",
+    "Sennheiser RF Basics; Cisco Network Technician Career Path; Microsoft Azure, AI, Security and Security Copilot coursework (training)"
+  ],
+  "projects": [
+    {
+      "name": "Crestron NVX diagnosis",
+      "text": "Owner-reported restored video after correcting encoder/decoder roles; sanitized completed case study."
+    },
+    {
+      "name": "OptiPlex Linux infrastructure",
+      "text": "Ubuntu, SSH and KVM/QEMU personal lab. Prometheus, Grafana and Uptime Kuma installed, owner-reported pending artifacts; monitoring reliability not yet evidenced."
+    },
+    {
+      "name": "Vector Learning",
+      "text": "Founder and lead developer of a technical-learning product in development. Current public feature scope remains unverified; private implementation details are excluded."
+    },
+    {
+      "name": "AV Portfolio Suite / AV Integrity Lab / Cloud Task Suite",
+      "text": "Separate local software prototypes with bounded automated checks. Simulated AV data, configuration comparison and Flask/SQLite learning work; no production deployment is claimed."
+    },
+    {
+      "name": "AV Operations Command Center",
+      "text": "Existing Base44 platform prototype. Seven entity schemas inspected; source, runtime acceptance and public deployment remain unverified."
+    },
+    {
+      "name": "Engineering portfolio",
+      "text": "Content-driven Next.js/React/TypeScript static portfolio, implemented with AI assistance. Owner review, exercises and ongoing maintenance tracked separately."
+    }
+  ],
+  "education": [
+    {
+      "school": "J. Sargeant Reynolds Community College",
+      "qualification": "Associate of Science - Social Sciences, May 2024"
+    },
+    {
+      "school": "Virginia Commonwealth University",
+      "qualification": "Computer Science coursework; no Computer Science degree claimed."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Inactive until reviewed and uploaded; a manual invocation never deploys.
+name: Manual portfolio quality checks
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified October 22
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4, verified October 22
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+      - run: npm run validate
+      - run: npx --no-install playwright install --with-deps chromium
+      - run: npm run build:pages
+      - run: npm run verify:export -- --public
+      - run: npm run test:e2e
+      - run: npm audit --omit=dev --audit-level=high

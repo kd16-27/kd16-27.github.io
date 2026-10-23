@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.openai
+.sites-runtime
+playwright-report
+test-results
+
+docs/history/
