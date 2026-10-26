@@ -70,3 +70,15 @@ Owner authorized implementation, regression checks and reviewed commits to the s
 - **Release/security:** Existing public facts, résumé/PDF checksum, approved LinkedIn identity and ten case boundaries are retained. The launch checklist now records the already completed GitHub Actions source transition. Merge, hosted workflow dispatch, public launch, further hosting/environment changes and paid services remain unapproved.
 
 See DEVELOPER_WALKTHROUGH.md for file/function explanations and short exercises. Spoken screen-reader acceptance remains pending until an actual usable assistive session is recorded; the PDF remains untagged with HTML/text alternatives. Owner-led practice should record date, exact edit, prediction, observed result and guidance level.
+
+## October 26 — release acceptance and recoverability
+
+Codex prepared a local recovery archive for the former Pages homepage/stylesheet, preserving exact public bytes and checking hashes after fresh extraction. Its verifier rejects deliberate changes; a loopback preview resolves the original query-string stylesheet. An inactive manual restoration template validates a fixed file set and exact reviewed content revision before direct artifact upload, avoiding the new portfolio build. No template was installed or executed remotely.
+
+Targeted actual Safari checks exercised accordion state, 320/390px layouts, theme, mobile Option-Tab/Escape/focus, search narrowing, Integrity evidence and résumé controls. Firefox was unavailable. VoiceOver activation timed out and remained inactive, so spoken acceptance is still pending. Normal Chrome rechecked the approved LinkedIn destination. Twenty-four unit tests were rerun, along with ten route and actual PDF HTTP/hash checks. The full 132 Chromium checks/builds/audits remain October 23 evidence; October 26 push and acceptance dates do not change that history.
+
+Concepts: a content hash identifies bytes, while a successful local preview proves only bounded local behavior. A deployment artifact is different from source and from the workflow that uploads it. A template's manual trigger is a procedural control, not a required reviewer. Recovery needs an approved artifact, a usable deployment path and post-restoration verification; an expired historical artifact is not a plan.
+
+Exercises in a disposable extracted package: run verify.py, change one character of its copied index.html and confirm rejection, then discard that disposable copy. Explain why changing expected hashes defeats integrity checking. Trace how the stylesheet URL's query string resolves to the captured file. Compare Safari's preview canvas scale with actual browser zoom, and write a spoken-test record only after observing real announcements. Do not install/run the recovery template or change production settings as an exercise.
+
+Owner-independent implementation, assistive testing proficiency, issuer verification and production reliability are not inferred. Original applications/checkpoints and baseline evidence remain preserved. Exact acceptance limits and the recovery digest are in docs/release/RELEASE_ACCEPTANCE_20261026.md.

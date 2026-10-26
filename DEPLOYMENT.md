@@ -35,6 +35,8 @@ All candidate workflow actions are pinned. Build uses contents/pages-read permis
 
 ## Headers and rollback
 
+October 26 acceptance update: a verified owner-local homepage/stylesheet recovery archive and inactive direct-artifact recovery template are now prepared. Fresh extraction, tamper rejection, local styled preview and template hash-validation checks passed. No recovery workflow/content revision is installed remotely and no hosted recovery was executed. Review/approve any installation and the exact production restoration separately. The [acceptance addendum](docs/release/RELEASE_ACCEPTANCE_20261026.md) records checksums, dependencies and remaining setup limits; the package README contains the stage-by-stage procedure. These local preparation results do not authorize changing Pages source or dispatching a workflow.
+
 GitHub Pages does not apply public/_headers or vercel.json. Preview-server CSP and other headers are local verification behavior, not proof of hosted protection. Inspect actual hosted responses after an authorized launch. The static site provides no server authentication or data collection.
 
 Preserve deployment history and rollback evidence before replacement. If acceptance fails, report the exact issue and obtain approval to restore the previously reviewed artifact/commit through a deployment. Do not reset or erase history, rewrite Integrity baseline evidence or point the public site at a private lab/employer system.

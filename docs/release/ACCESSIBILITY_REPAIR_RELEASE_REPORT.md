@@ -1,5 +1,7 @@
 # Accessibility repair release candidate — October 23, 2026
 
+Dated implementation/validation record. See [October 26 acceptance addendum](RELEASE_ACCEPTANCE_20261026.md) for the later exact-commit push, recovery preparation, targeted Safari checks and current remaining limitations. October 23 full-suite/build/audit results below were not redated to the October 26 publication date.
+
 Baseline: aecdbe931c62c40eeea5df3f8e4273039fc20b52. This report belongs to the tested repair commit on codex/portfolio-release-preparation-20261023, reviewed in Draft PR #1. The exact final SHA/tree and source/static package hashes are recorded in the owner's final handoff receipt and PR head, avoiding a self-referential commit hash inside its own source.
 
 ## Result and source scope
