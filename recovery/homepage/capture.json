@@ -1,0 +1,32 @@
+{
+  "observedAtUtc": "2026-10-26T15:11:26.172416+00:00",
+  "originalSourceCommit": "0e8b2bcc974fc3fc1aac17764914710e0b7300b8",
+  "historicalDeploymentRun": 33534640713,
+  "resources": [
+    {
+      "url": "https://kd16-27.github.io/",
+      "path": "index.html",
+      "bytes": 2030,
+      "sha256": "3ba378ea7c564b60fc653e415a2c3ab688e04a32adf2f5475d0060cbe69efc07",
+      "status": 200,
+      "matchesPriorCapture": true
+    },
+    {
+      "url": "https://kd16-27.github.io/assets/css/style.css?v=0e8b2bcc974fc3fc1aac17764914710e0b7300b8",
+      "path": "assets/css/style.css",
+      "bytes": 76559,
+      "sha256": "38ec41b2a4c4765872f17ff3b131f560da97704113ee4f7dc884a643c8628fca",
+      "status": 200,
+      "matchesPriorCapture": true
+    }
+  ],
+  "externalAnchorScript": {
+    "url": "https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js",
+    "integrity": "sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=",
+    "sha256": "95969184aae2df9032252ca95d7b38a3a38f1536d3994a25b416c309b7737a08",
+    "referenceCopy": "reference/anchor.min.js",
+    "liveHtmlUnchanged": true
+  },
+  "restorationPerformed": false,
+  "hostingChanged": false
+}
