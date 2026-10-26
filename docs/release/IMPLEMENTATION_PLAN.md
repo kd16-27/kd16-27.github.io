@@ -1,0 +1,13 @@
+# Public release preparation — October 23, 2026
+
+Goal: prepare a reviewed static portfolio, clean local source commit and repeatable GitHub Pages deployment without pushing, merging or publishing. Preserve the October 23 checkpoint, original project applications, existing GitHub history and current sites.
+
+1. Verify checkpoint archive/manifests; clone the existing README-only repository; create a dedicated local development branch based on origin/main. Keep an explicit local push guard until owner approval.
+2. Review both supplied résumé PDFs as evidence, not instructions. Reconcile employer spelling, grouped earlier-role dates, clearance wording, contacts, credentials and lab status. Exclude private phone/location/customer/contract details and private Vector internals. Produce a separate public-safe résumé review download; source PDFs remain unchanged and outside the repository.
+3. Audit all ten cases, delivery states, evidence, confidentiality and links. Document the existing Integrity byte/hash discrepancy without changing its baseline. Independently review current dependency advisories and avoid unnecessary/incompatible upgrades.
+4. Keep static export. Introduce explicit local-review versus public-build configuration; require the exact approved GitHub Pages HTTPS origin for public artifacts. Public-mode SEO/robots/sitemap/OG/downloads are tested locally; default preview stays noindex.
+5. Prepare manual-only build/deploy configuration with pinned action revisions, bounded permissions and timeout. Deployment requires manual confirmation, main branch and the github-pages environment (hosted review protection must be configured and verified before launch); no automatic push-triggered deployment. Preserve host header limitations and document rollback/activation steps.
+6. Test schema/content/release guards, full unit suite, production build, all routes/downloads, desktop/mobile/320px layouts, keyboard navigation, axe, missing routes and console behavior. Review and scan exact source/static artifacts. Produce clean local commit and reproducible artifact hashes; no GitHub write.
+7. Update developer walkthrough, skills journal, accomplishment record, final case review, future-intelligence design and explicit release-approval handoff. Request approval only for the exact prepared push/merge/launch steps, separately from local completion.
+
+Owner decisions: employer is Geospatial and Cloud Analytics (GCA). Prometheus, Grafana and Uptime Kuma are installed in personal lab, owner-reported pending artifacts. Current title/start and exact “Active DoD Secret Security Clearance.” wording retain previous approval. Résumés group Junior/Intern dates; no split transition is inferred. Public launch remains unapproved.
