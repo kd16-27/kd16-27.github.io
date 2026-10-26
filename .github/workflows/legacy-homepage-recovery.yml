@@ -1,0 +1,74 @@
+# Local recovery-only review candidate. Installing on main and actual
+# restoration each require separate owner approval. No automatic trigger.
+name: Owner-approved legacy homepage recovery
+on:
+  workflow_dispatch:
+    inputs:
+      recovery_commit:
+        description: Exact owner-reviewed 40-character commit containing recovery/homepage/site
+        required: true
+        type: string
+      approval:
+        description: Type RESTORE_APPROVED_LEGACY_HOMEPAGE after separate recovery approval
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: portfolio-pages
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main' && inputs.approval == 'RESTORE_APPROVED_LEGACY_HOMEPAGE'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Validate exact recovery revision
+        env:
+          RECOVERY_COMMIT: ${{ inputs.recovery_commit }}
+        run: '[[ "$RECOVERY_COMMIT" =~ ^[0-9a-f]{40}$ ]]'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.recovery_commit }}
+          persist-credentials: false
+      - name: Verify recovery files without building the portfolio
+        env:
+          RECOVERY_COMMIT: ${{ inputs.recovery_commit }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$RECOVERY_COMMIT"
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          root = Path('recovery/homepage/site')
+          expected = {
+            'index.html': '3ba378ea7c564b60fc653e415a2c3ab688e04a32adf2f5475d0060cbe69efc07',
+            'assets/css/style.css': '38ec41b2a4c4765872f17ff3b131f560da97704113ee4f7dc884a643c8628fca',
+          }
+          assert not root.is_symlink()
+          assert root.is_dir()
+          assert not any(p.is_symlink() for p in root.rglob('*'))
+          assert {str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()} == set(expected)
+          for name, sha in expected.items():
+            assert hashlib.sha256((root / name).read_bytes()).hexdigest() == sha, name
+          PY
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: recovery/homepage/site
+  restore:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Restore the approved captured homepage artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
