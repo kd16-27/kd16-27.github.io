@@ -67,7 +67,7 @@ function Orbit() {
     const anim = animate(".orbit-scanner", {
       rotate: ["0deg", "360deg"], duration: 24000, loop: true, ease: "linear",
     })
-    return () => anim.pause()
+    return () => { anim.pause() }
   }, [reduce])
   return (
     <div className="orbit" aria-label="Decorative engineering orbit visualization" role="img">
