@@ -18,8 +18,8 @@ type Project = {
 const projects: Project[] = [
   {
     number: "01", label: "Homelab / Systems Operations", category: "infrastructure",
-    description: "A private multi-machine laboratory for Linux, Docker deployments, remote administration, monitoring, and automation.",
-    stack: ["Ubuntu", "Docker", "Ansible", "Tailscale"],
+    description: "Recovered and rebuilt a Dell Precision workstation as a Proxmox hypervisor; configured host networking, Linux LVM-thin virtual-disk storage and disk-health validation alongside a separate Ubuntu/Docker/Ansible service node.",
+    stack: ["Proxmox VE", "Linux / LVM", "Docker", "Ansible"],
     url: "https://github.com/kd16-27", glyph: "▣",
     note: "Private source — public overview only",
   },
